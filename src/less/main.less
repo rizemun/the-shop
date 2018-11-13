@@ -1,38 +1,85 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) '_media.less';
+@redColor: #c30000;
+@sideWidth: 100px;
 
 body {
-    background: blue;
+    background: white;
+    font-family: Roboto, sans-serif;
 }
 
-// Стили для всех девайсов (все @media-запросы) пишутся внитри блока
+.topLine {
+    margin: 0;
+    padding: 10px;
+    height: 100px;
+
+    &__logo {
+        margin-left: @sideWidth;
+        width: 100px;
+        height: 100px;
+    }
+
+    &__number {
+        position: absolute;
+        margin-right: 100px;
+        margin-top: 50px;
+        right: 0;
+        top: 0;
+        color: @redColor;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
 .menu {
     margin: 0;
     padding: 0;
-    text-align: center;
-    background: red;
+    background: black;
+    height: 50px;
 
-    @media @tablet {
-        background: green;
-    }
-
-    @media @desktop {
-        background: blue;
-    }
-
-    // Пример стилей для элемента `.menu__item`
     &__item {
-        display: inline-block;
-        list-style-type: none;
+        margin-right: 10px;
+        margin-top: 20px;
+        color: @redColor;
+        font-size: 14px;
     }
 
-    // Пример модификатора `.menu_bottom`
-    &_bottom {
-        background: green;
+    &__item:first-child {
+        margin-left: @sideWidth+40px;
     }
 
-    // Пример переопределения стилей элемента в нижнем меню `.menu_bottom .menu__item`
-    &_bottom &__item {
-        color: #f00;
+    &__search {
+        position: absolute;
+        right: 0;
+        margin: 5px @sideWidth 5px 0;
+        height: 40px;
     }
+}
+
+.breadcrumb {
+    margin: 0;
+    padding: 0;
+
+    &__link_current {
+        color: @redColor;
+    }
+
+    &__item {
+        display: inline;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: black;
+    }
+
+    &__separator {
+        display: inline;
+    }
+}
+
+
+.tshirt-image {
+    width: 800px;
+    height: 920px;
 }
