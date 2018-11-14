@@ -16,36 +16,78 @@
 <header class="header">
 
     <div class="topLine">
-        <img class="topLine__logo" src="img/the_shop_logo.svg">
+        <img class="topLine__shopLogo" src="img/the_shop_logo.svg">
+        <img class="topLine__OggettoLogo" src="img/oggetto_logo.svg">
         <div class="topLine__number">
-            +7 (812) 2 12 85 06
+            +7 (812) 2<span>&#149</span>12<span>&#149</span>85<span>&#149</span>06
         </div>
     </div>
 
     <nav class="menu">
-        <a href="" class="menu__item">OCaml</a>
-        <a href="" class="menu__item">JavaScript</a>
-        <a href="" class="menu__item">Python</a>
-        <a href="" class="menu__item">PHP</a>
+        <a href="#" class="menu__item menu__item_current">LISP</a>
+        <a href="#" class="menu__item">OCaml</a>
+        <a href="#" class="menu__item">JavaScript</a>
+        <a href="#" class="menu__item">Python</a>
+        <a href="#" class="menu__item">PHP</a>
         <input type="search" class="menu__search">
+        <img src="/img/icons/search-image.svg"  class="menu__search-icon">
     </nav>
-
-    <h1>Hello world</h1>
-	<h2 style="color:purple; text-shadow 1px 1px 3px red">OMG! It works! rizemun is the best!"</h2>
 </header>
 
-<img src="img/pic.png" alt="">
 <article>
-<ul class="breadcrumb">
-    <li class="breadcrumb__item"><a href="#" class="breadcrumb__link_current">LISP</a></li>
-    <li class="breadcrumb__separator">/</li>
-    <li class="breadcrumb__item"><a href="#" class="breadcrumb__link_current">Одежда</a></li>
-    <li class="breadcrumb__separator">/</li>
-    <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Футболки</a></li>
-</ul>
+    <ul class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">LISP</a></li>
+        <li class="breadcrumb__separator">/</li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Одежда</a></li>
+        <li class="breadcrumb__separator">/</li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link_current">Футболки</a></li>
+    </ul>
 
-<img class="tshirt-image" src="/img/tshirts/tshirt_green.jpg">
-
+    <div class="item">
+        <div class="item__image-wrap">
+            <img id="im1" class="item__image visible" src="/img/tshirts/tshirt_white.jpg">
+            <img id="im2" class="item__image invisible" src="/img/tshirts/tshirt_yellow.jpg">
+            <img id="im3" class="item__image invisible" src="/img/tshirts/tshirt_green.jpg">
+        </div>
+        <div class="information">
+            <div class="item__name">Футболка Alien technology</div>
+            <div class="item__text">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</div>
+            <div class="item__price">1500&#8381;</div>
+            <div class="item__text">Размер</div>
+            <div class="item__size-picker">
+                <label>
+                    <input type="radio" name="size" class="item__picker-button" value="0">
+                    <span>S</span>
+                </label>
+                <label>
+                    <input type="radio" name="size" class="item__picker-button" checked="checked" value="1">
+                    <span>M</span>
+                </label>
+                <label>
+                    <input type="radio" name="size" class="item__picker-button" value="2">
+                    <span>L</span>
+                </label>
+            </div>
+            <div class="item__text">Цвет</div>
+            <div class="item__color-picker">
+                <label>
+                <input type="radio" name="color" class="item__picker-button" id="item-color1" checked="checked" value="0">
+                <span class="colored"></span>
+                </label>
+                <label>
+                <input type="radio" name="color" class="item__picker-button" id="item-color2" value="1">
+                <span class="colored"></span>
+                </label>
+                <label>
+                <input type="radio" name="color" class="item__picker-button" id="item-color3" value="2">
+                <span class="colored"></span>
+                </label>
+            </div>
+            <button class="item__buy-button">Купить</button>
+            <img src="" alt="" class="item__later-icon">
+            <a href="#" class="item__later">Отложить на потом</a>
+        </div>
+    </div>
 
 
 

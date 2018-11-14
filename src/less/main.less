@@ -2,21 +2,45 @@
 @import (less) '_media.less';
 @redColor: #c30000;
 @sideWidth: 100px;
+@item-color1: #fffafb;
+@item-color2: #e3d95e;
+@item-color3: #a5af96;
 
 body {
     background: white;
     font-family: Roboto, sans-serif;
 }
 
+.invisible {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
+
 .topLine {
     margin: 0;
     padding: 10px;
     height: 100px;
+    width:100%;
 
-    &__logo {
+    &__shopLogo {
         margin-left: @sideWidth;
         width: 100px;
         height: 100px;
+    }
+
+    &__OggettoLogo {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin-top: 40px;
+        transform: translate(-20px 0);
+        fill: #c30000;
+        stroke: blue;
+        width: 40px;
+        height: 40px;
     }
 
     &__number {
@@ -34,18 +58,25 @@ body {
 .menu {
     margin: 0;
     padding: 0;
-    background: black;
+    background: #f4f4ef;
     height: 50px;
 
     &__item {
+        display: inline-block;
         margin-right: 10px;
-        margin-top: 20px;
+        margin-top: 16px;
         color: @redColor;
         font-size: 14px;
     }
 
     &__item:first-child {
-        margin-left: @sideWidth+40px;
+        margin-left: @sideWidth;
+    }
+
+    &__item_current {
+        font-weight: 700;
+        color: black;
+        text-decoration: none;
     }
 
     &__search {
@@ -54,14 +85,24 @@ body {
         margin: 5px @sideWidth 5px 0;
         height: 40px;
     }
+
+    &__search-icon {
+        position: absolute;
+        right: 0;
+        margin: 10px @sideWidth + 4px 5px 0;
+        width: 30px;
+        height: 30px;
+        opacity: .5;
+    }
 }
 
 .breadcrumb {
-    margin: 0;
+    margin: 40px @sideWidth 0;
     padding: 0;
 
     &__link_current {
-        color: @redColor;
+        text-decoration: none;
+        color: black;
     }
 
     &__item {
@@ -69,8 +110,7 @@ body {
     }
 
     &__link {
-        text-decoration: none;
-        color: black;
+        color: @redColor;
     }
 
     &__separator {
@@ -78,8 +118,95 @@ body {
     }
 }
 
+.item {
+    margin: 15px @sideWidth 0;
+    height:800px;
+    width: 100%;
 
-.tshirt-image {
-    width: 800px;
-    height: 920px;
+    &__image-wrap{
+        position: static;
+        height: 700px;
+        width: 700px;
+    }
+    &__image {
+        position: absolute;
+        height: 700px;
+        width: 700px;
+        transition: opacity 1s;
+    }
+
+    &__name {
+        font-size:28px;
+        font-weight: 700;
+    }
+
+    &__text {
+        margin: 10px 0;
+        font-size: 12px;
+    }
+
+    &__price {
+        color: @redColor;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__buy-button {
+        width: 200px;
+        height: 80px;
+        background-color: @redColor;
+        color: white;
+        font-size: 24px;
+    }
+
+    &__later {
+        font-size: 12px;
+        color: gray;
+    }
+
+    &__picker-button {
+        display: none;
+    }
+
+    &__picker-button + span {
+        display: inline-block;
+        margin: 0;
+        padding: 1px;
+        width: 65px;
+        height: 65px;
+        border: 2px solid gray;
+        background-color: white;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 32px;
+        line-height: 65px;
+        color: black;
+    }
+
+    &__picker-button#item-color1  + span{
+        background: @item-color1;
+    }
+
+    &__picker-button#item-color2 + span {
+        background: @item-color2;
+    }
+
+    &__picker-button#item-color3 + span {
+        background: @item-color3;
+    }
+
+    &__picker-button:checked + span {
+        border: 3px solid @redColor;
+        padding: 0;
+    }
+
+    &__size-picker {
+        margin-bottom: 40px;
+    }
+    &__color-picker {
+        margin-bottom: 40px;
+    }
+
+
 }
+
