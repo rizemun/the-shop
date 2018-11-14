@@ -1,10 +1,12 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) '_media.less';
 @redColor: #c30000;
+@menuColor: #f4f4ef;
 @sideWidth: 100px;
 @item-color1: #fffafb;
 @item-color2: #e3d95e;
 @item-color3: #a5af96;
+
 
 body {
     background: white;
@@ -58,7 +60,7 @@ body {
 .menu {
     margin: 0;
     padding: 0;
-    background: #f4f4ef;
+    background: @menuColor;
     height: 50px;
 
     &__item {
@@ -82,17 +84,24 @@ body {
     &__search {
         position: absolute;
         right: 0;
-        margin: 5px @sideWidth 5px 0;
+        margin: 5px @sideWidth 10px 0;
         height: 40px;
+        width: 280px;
+        border: #b8b8b4;
     }
 
     &__search-icon {
         position: absolute;
         right: 0;
-        margin: 10px @sideWidth + 4px 5px 0;
-        width: 30px;
-        height: 30px;
-        opacity: .5;
+        padding: 15px;
+        margin: 2px @sideWidth 0 0;
+        width: 16px;
+        height: 16px;
+        opacity: .3;
+    }
+
+    &__search-icon:hover {
+        opacity: .6;
     }
 }
 
@@ -117,37 +126,42 @@ body {
         display: inline;
     }
 }
-
 .item {
     margin: 15px @sideWidth 0;
-    height:800px;
+    height: 800px;
     width: 100%;
 
     &__image-wrap{
         position: static;
+        float: left;
         height: 700px;
         width: 700px;
+        margin-right: 40px;
     }
     &__image {
         position: absolute;
         height: 700px;
         width: 700px;
-        transition: opacity 1s;
+        transition: opacity 2s;
+    }
+
+    &__information {
+        float: left;
     }
 
     &__name {
-        font-size:28px;
+        font-size: 34px;
         font-weight: 700;
     }
 
     &__text {
         margin: 10px 0;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     &__price {
         color: @redColor;
-        font-size: 28px;
+        font-size: 34px;
         font-weight: 700;
     }
 
@@ -160,7 +174,19 @@ body {
     }
 
     &__later {
-        font-size: 12px;
+        margin: 30px 0 0;
+    }
+
+    &__later-icon {
+        float: left;
+        width: 26px;
+        height: 26px;
+    }
+
+    &__later-link {
+        float: left;
+        margin: 4px 0 0 5px;
+        font-size: 16px;
         color: gray;
     }
 
@@ -200,9 +226,19 @@ body {
         padding: 0;
     }
 
+    &__picker-button + span:hover {
+        border: 2px solid @redColor;
+    }
+
+    &__picker-button:checked + span:hover {
+        border: 2px solid @redColor;
+        padding: 1px;
+    }
+
     &__size-picker {
         margin-bottom: 40px;
     }
+
     &__color-picker {
         margin-bottom: 40px;
     }
@@ -210,3 +246,19 @@ body {
 
 }
 
+.footer {
+    height: 430px;
+    width: 100%;
+    background: @menuColor;
+    border-top: 1px solid #cbcbc7;
+
+}
+
+
+.social {
+
+    &__icon {
+        height: 40px;
+        width: 40px;
+    }
+}
