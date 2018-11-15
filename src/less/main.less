@@ -126,6 +126,7 @@ body {
         display: inline;
     }
 }
+
 .item {
     margin: 15px @sideWidth 0;
     height: 800px;
@@ -247,18 +248,131 @@ body {
 }
 
 .footer {
+    position: relative;
     height: 430px;
-    width: 100%;
     background: @menuColor;
     border-top: 1px solid #cbcbc7;
+    clear: both;
+}
 
+.bottom-menu {
+    float: left;
+    //border: 1px solid red;
+
+    &__wrap {
+        margin-top: 55px;
+    }
+
+    &__support {
+        margin: 0 0 0 @sideWidth;
+    }
+
+    &__about {
+        margin: 0 0 0 40px;
+    }
+
+    &__head {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        margin: 0 0 10px;
+    }
+
+    &__item > a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #3b3b3b;
+    }
+
+    &__item > a:hover {
+        text-decoration: underline;
+    }
+
+    &__items-left {
+        float: left;
+    }
+
+    &__items-right {
+        float: left;
+        margin: 0 20px;
+    }
 }
 
 
-.social {
+
+.advantage {
+    float: left;
+    margin: 0 0 0 40px;
+    //border: 1px solid red;
+
+    &__item {
+        clear: both;
+        margin: 0 0 26px;
+        height: 24px;
+    }
 
     &__icon {
-        height: 40px;
-        width: 40px;
+        float: right;
+        height: 24px;
     }
+
+    &__icon-wrap {
+        float: left;
+        width: 40px;
+        height: 24px;
+        text-align: right;
+    }
+
+    &__text {
+        float: left;
+        margin: 0 10px ;
+        font-size: 14px;
+        color: #3b3b3b;
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.social {
+    float: left;
+    margin: 0 0 0 40px;
+    //border: 1px solid red;
+
+    &__icon {
+        margin: 0 0 18px;
+        height: 32px;
+        width: 32px;
+        //border: 1px solid purple;
+    }
+
+    &__facebook:hover {
+        fill: #395692;
+    }
+
+    &__twitter:hover {
+        fill: #41abe1;
+    }
+
+    &__instagram:hover {
+        fill: #8b398e;
+    }
+
+
+}
+
+.privacy {
+    position: absolute;
+    clear: both;
+    bottom: 120px;
+    //border: 1px solid purple;
+    //bottom: -40px;
+    left: @sideWidth;
+    font-size: 14px;
+    color: #3b3b3b;
+    height: 20px;
+    line-height: 20px;
+
 }

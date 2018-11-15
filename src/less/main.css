@@ -504,13 +504,100 @@ body {
   margin-bottom: 40px;
 }
 .footer {
+  position: relative;
   height: 430px;
-  width: 100%;
   background: #f4f4ef;
   border-top: 1px solid #cbcbc7;
+  clear: both;
+}
+.bottom-menu {
+  float: left;
+}
+.bottom-menu__wrap {
+  margin-top: 55px;
+}
+.bottom-menu__support {
+  margin: 0 0 0 100px;
+}
+.bottom-menu__about {
+  margin: 0 0 0 40px;
+}
+.bottom-menu__head {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.bottom-menu__item {
+  margin: 0 0 10px;
+}
+.bottom-menu__item > a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #3b3b3b;
+}
+.bottom-menu__item > a:hover {
+  text-decoration: underline;
+}
+.bottom-menu__items-left {
+  float: left;
+}
+.bottom-menu__items-right {
+  float: left;
+  margin: 0 20px;
+}
+.advantage {
+  float: left;
+  margin: 0 0 0 40px;
+}
+.advantage__item {
+  clear: both;
+  margin: 0 0 26px;
+  height: 24px;
+}
+.advantage__icon {
+  float: right;
+  height: 24px;
+}
+.advantage__icon-wrap {
+  float: left;
+  width: 40px;
+  height: 24px;
+  text-align: right;
+}
+.advantage__text {
+  float: left;
+  margin: 0 10px ;
+  font-size: 14px;
+  color: #3b3b3b;
+  height: 20px;
+  line-height: 20px;
+}
+.social {
+  float: left;
+  margin: 0 0 0 40px;
 }
 .social__icon {
-  height: 40px;
-  width: 40px;
+  margin: 0 0 18px;
+  height: 32px;
+  width: 32px;
+}
+.social__facebook:hover {
+  fill: #395692;
+}
+.social__twitter:hover {
+  fill: #41abe1;
+}
+.social__instagram:hover {
+  fill: #8b398e;
+}
+.privacy {
+  position: absolute;
+  clear: both;
+  bottom: 120px;
+  left: 100px;
+  font-size: 14px;
+  color: #3b3b3b;
+  height: 20px;
+  line-height: 20px;
 }
 /*# sourceMappingURL=main.css.map */
