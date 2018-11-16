@@ -2,6 +2,7 @@
 @import (less) '_media.less';
 @redColor: #c30000;
 @menuColor: #f4f4ef;
+@top-menu-height: 50px;
 @sideWidth: 100px;
 @item-color1: #fffafb;
 @item-color2: #e3d95e;
@@ -14,10 +15,6 @@
 @media screen and (max-width: 1220px) {
 
 }
-
-
-
-
 
 body {
     background: white;
@@ -34,65 +31,92 @@ body {
 
 .topLine {
     margin: 0;
-    padding: 10px;
+    //padding: 10px;
     height: 100px;
-    width:100%;
+    width: 100%;
 
     &__shopLogo {
-        margin-left: @sideWidth;
-        width: 100px;
-        height: 100px;
+        position: absolute;
+        left: 10%;
+        top: 20px;
+        width: 40%;
+        height: 40px;
+
+        //border: 1px dotted purple;
+
+        @media desctop {
+            left: @sideWidth;
+            top: 10px;
+            width: 100px;
+            height: 100px;
+        }
     }
 
     &__OggettoLogo {
         position: absolute;
-        left: 50%;
-        top: 0;
-        margin-top: 40px;
+        right: 10%;
+        top: 20px;
         transform: translate(-20px 0);
         fill: @redColor;
-        //stroke: blue;
         width: 40px;
         height: 40px;
-        @media screen and (min-width: 1220px) {
-            дуае
+
+        //border: 1px dotted purple;
+
+        @media desktop {
+            left: 50%;
+            top: 40px;
+            transform: translate(-20px 0);
+            fill: @redColor;
+            width: 40px;
+            height: 40px;
         }
-        @media screen and (max-width: 1220px) {
-
-        }
-
-
 
     }
 
     &__number {
         position: absolute;
-        margin-right: 100px;
-        margin-top: 50px;
-        right: 0;
-        top: 0;
+        right: 20%;
+        top: 70px;
         color: @redColor;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 700;
+
+        //border: 1px solid purple;
+
+        @media desktop {
+            margin-right: 100px;
+            margin-top: 50px;
+            right: 0;
+            top: 0;
+            color: @redColor;
+            font-size: 20px;
+            font-weight: 700;
+        }
     }
 }
 
 .menu {
+    position: relative;
     margin: 0;
     padding: 0;
     background: @menuColor;
-    height: 50px;
+    height: @top-menu-height;
 
     &__item {
         display: inline-block;
         margin-right: 10px;
-        margin-top: 16px;
+        line-height: @top-menu-height;
         color: @redColor;
         font-size: 14px;
     }
 
     &__item:first-child {
-        margin-left: @sideWidth;
+        margin-left: 10px;
+
+        @media desctop {
+            margin-left: @sideWidth;
+        }
     }
 
     &__item_current {
@@ -103,21 +127,30 @@ body {
 
     &__search {
         position: absolute;
-        right: 0;
-        margin: 5px @sideWidth 10px 0;
+        right: 10px;
+        top: 5px;
+        //margin: 5px  10px 0;
         height: 40px;
-        width: 280px;
+        width: 40px;
         border: #b8b8b4;
+        border-radius: 3px;
+
+        border: 1px solid purple;
     }
 
     &__search-icon {
         position: absolute;
-        right: 0;
-        padding: 15px;
-        margin: 2px @sideWidth 0 0;
+        right: 13px;
+        top: 8px;
+        padding: 8px;
+        //margin: 2px @sideWidth 0 0;
         width: 16px;
         height: 16px;
         opacity: .3;
+        border: 1px solid purple;
+
+
+
     }
 
     &__search-icon:hover {
@@ -125,7 +158,7 @@ body {
     }
 }
 
-.breadcrumb {
+.breadcrumbs {
     margin: 40px @sideWidth 0;
     padding: 0;
 
@@ -180,7 +213,7 @@ body {
         border: 1px solid black;
     }
 
-    &__name {
+    &__name> h2 {
         font-size: 34px;
         font-weight: 700;
     }
