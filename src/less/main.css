@@ -333,7 +333,6 @@ body {
   margin-top: 40px;
   transform: translate(-20px 0);
   fill: #c30000;
-  stroke: blue;
   width: 40px;
   height: 40px;
 }
@@ -411,20 +410,25 @@ body {
   width: 100%;
 }
 .item__image-wrap {
-  position: static;
   float: left;
-  height: 700px;
-  width: 700px;
+  display: inline-block;
   margin-right: 40px;
+  min-width: 40%;
+  min-height: 40%;
+  border: 1px solid black;
+  overflow: hidden;
 }
 .item__image {
   position: absolute;
-  height: 700px;
+  display: block;
   width: 700px;
   transition: opacity 2s;
+  max-width: 40%;
 }
 .item__information {
   float: left;
+  min-width: 400px;
+  border: 1px solid black;
 }
 .item__name {
   font-size: 34px;
@@ -433,6 +437,7 @@ body {
 .item__text {
   margin: 10px 0;
   font-size: 16px;
+  word-wrap: break-word;
 }
 .item__price {
   color: #c30000;
@@ -440,6 +445,8 @@ body {
   font-weight: 700;
 }
 .item__buy-button {
+  border: none;
+  padding: 0px;
   width: 200px;
   height: 80px;
   background-color: #c30000;
@@ -447,18 +454,30 @@ body {
   font-size: 24px;
 }
 .item__later {
+  position: relative;
+  height: 36px;
+  width: 300px;
   margin: 30px 0 0;
 }
 .item__later-icon {
-  float: left;
+  position: absolute;
   width: 26px;
   height: 26px;
+  fill: gray;
 }
 .item__later-link {
-  float: left;
+  position: absolute;
+  left: 26px;
   margin: 4px 0 0 5px;
   font-size: 16px;
   color: gray;
+}
+.item__later-link:hover + .item__later-icon {
+  fill: #ff99cc;
+}
+.item__later-link:hover {
+  text-decoration-color: #4b4b4b;
+  color: #4b4b4b;
 }
 .item__picker-button {
   display: none;
@@ -505,10 +524,15 @@ body {
 }
 .footer {
   position: relative;
-  height: 430px;
   background: #f4f4ef;
   border-top: 1px solid #cbcbc7;
   clear: both;
+  height: 530px;
+}
+@media screen and (min-width: 1220px) {
+  .footer .footer {
+    height: 430px;
+  }
 }
 .bottom-menu {
   float: left;
@@ -547,7 +571,17 @@ body {
 }
 .advantage {
   float: left;
-  margin: 0 0 0 40px;
+  margin: 10px 0 0 100px;
+}
+@media screen and (min-width: 1220px) {
+  .advantage .advantage {
+    margin: 0 0 0 40px;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .advantage .advantage {
+    margin: 10px 0 0 100px;
+  }
 }
 .advantage__item {
   clear: both;

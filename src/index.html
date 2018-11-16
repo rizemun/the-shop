@@ -17,7 +17,9 @@
 
     <div class="topLine">
         <img class="topLine__shopLogo" src="img/the_shop_logo.svg">
-        <img class="topLine__OggettoLogo" src="img/oggetto_logo.svg">
+        <svg class="topLine__OggettoLogo">
+            <use xlink:href = "img/oggetto_logo.svg#ogg-logo"></use>
+        </svg>
         <div class="topLine__number">
             +7 (812) 2<span>&#149</span>12<span>&#149</span>85<span>&#149</span>06
         </div>
@@ -49,7 +51,7 @@
             <img id="im2" class="item__image invisible" src="/img/tshirts/tshirt_yellow.jpg">
             <img id="im3" class="item__image invisible" src="/img/tshirts/tshirt_green.jpg">
         </div>
-        <div class="information">
+        <div class="item__information">
             <div class="item__name">Футболка Alien technology</div>
             <div class="item__text">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</div>
             <div class="item__price">1500&#8381;</div>
@@ -85,8 +87,10 @@
             </div>
             <button class="item__buy-button">Купить</button>
             <div class="item__later">
-                <img src="/img/icons/heart.svg" class="item__later-icon">
                 <a href="#" class="item__later-link">Отложить на потом</a>
+                <svg class="item__later-icon">
+                    <use xlink:href="/img/icons/heart-full.svg#s-heart"></use>
+                </svg>
             </div>
         </div>
     </div>
@@ -150,22 +154,22 @@
         </div>
         <div class="social">
             <div class="social__item">
-                <a href = "#" class = "social__link social__facebook">
-                <svg class="social__icon" viewBox="0 0 22.8 44">
+                <a href = "#" class = "social__link">
+                <svg class="social__icon social__facebook" viewBox="0 0 22.8 44">
                     <use xlink:href="/img/icons/facebook.svg#all"></use>
                 </svg>
                 </a>
             </div>
             <div class="social__item">
-                <a href = "#" class = "social__link social__twitter">
-                    <svg class="social__icon" viewBox="0 0 48.6 39.6">
+                <a href = "#" class = "social__link">
+                    <svg class="social__icon social__twitter" viewBox="0 0 48.6 39.6">
                         <use xlink:href="/img/icons/twitter.svg#all"></use>
                     </svg>
                 </a>
             </div>
             <div class="social__item">
-                <a href = "#" class = "social__link social__instagram">
-                    <svg class="social__icon" viewBox="0 0 45.6 45.6">
+                <a href = "#" class = "social__link">
+                    <svg class="social__icon social__instagram" viewBox="0 0 45.6 45.6">
                         <use xlink:href="/img/icons/instagram.svg#all"></use>
                     </svg>
                 </a>

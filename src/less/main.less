@@ -8,6 +8,17 @@
 @item-color3: #a5af96;
 
 
+@media screen and (min-width: 1220px) {
+
+}
+@media screen and (max-width: 1220px) {
+
+}
+
+
+
+
+
 body {
     background: white;
     font-family: Roboto, sans-serif;
@@ -39,10 +50,19 @@ body {
         top: 0;
         margin-top: 40px;
         transform: translate(-20px 0);
-        fill: #c30000;
-        stroke: blue;
+        fill: @redColor;
+        //stroke: blue;
         width: 40px;
         height: 40px;
+        @media screen and (min-width: 1220px) {
+            дуае
+        }
+        @media screen and (max-width: 1220px) {
+
+        }
+
+
+
     }
 
     &__number {
@@ -133,21 +153,31 @@ body {
     width: 100%;
 
     &__image-wrap{
-        position: static;
         float: left;
-        height: 700px;
-        width: 700px;
+        display: inline-block;
+        //height: 700px;
+        //width: 700px;
         margin-right: 40px;
+        min-width: 40%;
+        min-height: 40%;
+
+        border: 1px solid black;
+
+        overflow:hidden;
     }
     &__image {
         position: absolute;
-        height: 700px;
+
+        display: block;
         width: 700px;
         transition: opacity 2s;
+        max-width: 40%;
     }
 
     &__information {
         float: left;
+        min-width: 400px;
+        border: 1px solid black;
     }
 
     &__name {
@@ -158,6 +188,7 @@ body {
     &__text {
         margin: 10px 0;
         font-size: 16px;
+        word-wrap: break-word;
     }
 
     &__price {
@@ -167,6 +198,8 @@ body {
     }
 
     &__buy-button {
+        border: none;
+        padding: 0px;
         width: 200px;
         height: 80px;
         background-color: @redColor;
@@ -174,21 +207,37 @@ body {
         font-size: 24px;
     }
 
+
     &__later {
+        position: relative;
+        height: 36px;
+        width: 300px;
         margin: 30px 0 0;
     }
 
     &__later-icon {
-        float: left;
+        position: absolute;
         width: 26px;
         height: 26px;
+        fill: gray;
     }
 
     &__later-link {
-        float: left;
+        position: absolute;
+        left: 26px;
+        //float: left;
         margin: 4px 0 0 5px;
         font-size: 16px;
         color: gray;
+    }
+
+    &__later-link:hover + &__later-icon {
+        fill: #ff99cc;
+    }
+
+    &__later-link:hover {
+        text-decoration-color: #4b4b4b;
+        color: #4b4b4b;
     }
 
     &__picker-button {
@@ -249,10 +298,17 @@ body {
 
 .footer {
     position: relative;
-    height: 430px;
+
     background: @menuColor;
     border-top: 1px solid #cbcbc7;
     clear: both;
+
+    @media screen and (min-width: 1220px) {
+        .footer {
+            height: 430px;
+        }
+    }
+    height: 530px;
 }
 
 .bottom-menu {
@@ -305,7 +361,19 @@ body {
 
 .advantage {
     float: left;
-    margin: 0 0 0 40px;
+
+    @media screen and (min-width: 1220px) {
+        .advantage {
+            margin: 0 0 0 40px;
+        }
+    }
+    @media screen and (max-width: 1220px) {
+        .advantage {
+            margin: 10px 0 0 @sideWidth;
+        }
+    }
+    margin: 10px 0 0 @sideWidth;
+
     //border: 1px solid red;
 
     &__item {
