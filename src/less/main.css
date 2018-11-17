@@ -305,6 +305,9 @@ template {
 }
 /* # Setup devices width */
 /* # Variables for mobile first approach and strict ranges */
+html {
+  padding: 0;
+}
 body {
   background: white;
   font-family: Roboto, sans-serif;
@@ -496,7 +499,6 @@ body {
     float: left;
     min-width: 400px;
     text-align: left;
-    border: 1px solid black;
   }
 }
 .item__name > h2 {
@@ -612,15 +614,11 @@ body {
   background: #f4f4ef;
   border-top: 1px solid #cbcbc7;
   clear: both;
-  height: 530px;
 }
 @media only screen and (min-width: 992px) {
   .footer {
     height: 430px;
   }
-}
-.bottom-menu {
-  border: 1px solid red;
 }
 @media only screen and (min-width: 992px) {
   .bottom-menu {
@@ -629,7 +627,6 @@ body {
 }
 .bottom-menu__wrap {
   margin-top: 30px;
-  border: 1px solid red;
 }
 @media only screen and (min-width: 992px) {
   .bottom-menu__wrap {
@@ -637,10 +634,8 @@ body {
   }
 }
 .bottom-menu__support {
-  height: 180px;
   width: 90%;
   margin: 0 auto;
-  border: 1px solid purple;
 }
 @media only screen and (min-width: 992px) {
   .bottom-menu__support {
@@ -663,12 +658,11 @@ body {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 .bottom-menu__item {
   width: 100%;
   margin: 0 0 10px;
-  border: 1px solid blue;
 }
 @media only screen and (min-width: 992px) {
   .bottom-menu__item {
@@ -686,7 +680,6 @@ body {
 .bottom-menu__items-left {
   float: left;
   text-align: right;
-  border: 1px solid purple;
   width: 45%;
 }
 @media only screen and (min-width: 992px) {
@@ -697,7 +690,6 @@ body {
 }
 .bottom-menu__items-right {
   float: right;
-  border: 1px solid green;
   width: 45%;
 }
 @media only screen and (min-width: 992px) {
@@ -707,49 +699,110 @@ body {
     width: auto;
   }
 }
+.bottom-menu__checkbox-label {
+  display: inline-block;
+  margin: 10px 0 0;
+  height: 20px;
+  width: 20px;
+  background: red;
+  border-radius: 50%;
+  transform: translate(0, 5px);
+}
+.bottom-menu__checkbox {
+  display: none;
+}
+.bottom-menu__items {
+  height: 0;
+  transition: height 1s;
+  overflow: hidden;
+}
+.bottom-menu__checkbox:checked ~ .bottom-menu__items {
+  height: 140px;
+  transition: height 2s;
+}
+.bottom-menu__checkbox:checked ~ .bottom-menu__checkbox-label {
+  background: purple;
+}
 .advantage {
-  float: left;
-  margin: 10px 0 0 100px;
+  width: 90%;
+  margin: 20px auto;
+  /*@media screen and (min-width: 1220px) {
+        .advantage {
+            margin: 0 0 0 40px;
+        }
+    }
+    @media screen and (max-width: 1220px) {
+        .advantage {
+            margin: 10px 0 0 @sideWidth;
+        }
+    }*/
 }
-@media screen and (min-width: 1220px) {
-  .advantage .advantage {
-    margin: 0 0 0 40px;
-  }
-}
-@media screen and (max-width: 1220px) {
-  .advantage .advantage {
-    margin: 10px 0 0 100px;
+@media only screen and (min-width: 992px) {
+  .advantage {
+    float: left;
   }
 }
 .advantage__item {
+  position: relative;
   clear: both;
-  margin: 0 0 26px;
+  margin: 0 0 20px;
   height: 24px;
+}
+@media only screen and (min-width: 992px) {
+  .advantage__item {
+    margin: 0 0 26px;
+  }
 }
 .advantage__icon {
   float: right;
   height: 24px;
 }
 .advantage__icon-wrap {
-  float: left;
+  position: absolute;
+  left: 20px;
   width: 40px;
   height: 24px;
-  text-align: right;
+}
+@media only screen and (min-width: 992px) {
+  .advantage__icon-wrap {
+    position: static;
+    float: left;
+  }
 }
 .advantage__text {
-  float: left;
-  margin: 0 10px ;
+  margin: 0 0 0 70px;
   font-size: 14px;
   color: #3b3b3b;
   height: 20px;
-  line-height: 20px;
+  line-height: 24px;
+}
+@media only screen and (min-width: 992px) {
+  .advantage__text {
+    float: left;
+    position: static;
+  }
 }
 .social {
+  width: 90%;
+  margin: 40px auto;
+}
+@media only screen and (min-width: 992px) {
+  .social {
+    float: left;
+    margin: 0 0 0 40px;
+  }
+}
+.social__item {
   float: left;
-  margin: 0 0 0 40px;
+  width: 32%;
+  text-align: center;
+}
+.social__item a {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
 }
 .social__icon {
-  margin: 0 0 18px;
   height: 32px;
   width: 32px;
 }
@@ -763,13 +816,19 @@ body {
   fill: #8b398e;
 }
 .privacy {
-  position: absolute;
+  width: 90%;
+  margin: 40px auto 0;
+  padding: 40px 0 40px 0;
   clear: both;
-  bottom: 120px;
   left: 100px;
   font-size: 14px;
   color: #3b3b3b;
-  height: 20px;
   line-height: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .privacy {
+    position: absolute;
+    bottom: 120px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

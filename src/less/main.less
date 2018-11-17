@@ -16,6 +16,9 @@
 
 }
 
+html {
+    padding: 0;
+}
 body {
     background: white;
     font-family: Roboto, sans-serif;
@@ -233,7 +236,6 @@ body {
             float: left;
             min-width: 400px;
             text-align: left;
-            border: 1px solid black;
         }
     }
 
@@ -372,7 +374,7 @@ body {
     border-top: 1px solid #cbcbc7;
     clear: both;
 
-    height: 530px;
+    //height: 530px;
 
     @media @desktop {
         height: 430px;
@@ -381,7 +383,6 @@ body {
 }
 
 .bottom-menu {
-    border: 1px solid red;
 
     @media @desktop {
         float: left;
@@ -393,26 +394,25 @@ body {
         @media @desktop {
             margin-top: 55px;
         }
-        border: 1px solid red;
     }
 
     &__support {
-        height: 180px;
+        //height: 180px;
         width: 90%;
         margin: 0 auto;
+        //border: 1px solid red;
+        //height: 0;
         @media @desktop {
             margin: 0 0 0 @sideWidth;
             width: auto;
         }
-
-
-        border: 1px solid purple;
     }
 
     &__about {
         width: 90%;
         margin: 10px auto 0;
         height: 160px;
+        //border: 1px solid red;
         @media @desktop {
             margin: 0 0 0 40px;
             width: auto;
@@ -423,15 +423,16 @@ body {
         text-align: center;
         font-size: 16px;
         font-weight: 700;
-        margin-bottom: 20px;
+        padding: 20px;
     }
+
+
+
 
     &__item {
         width: 100%;
         margin: 0 0 10px;
 
-
-        border: 1px solid blue;
         @media @desktop {
             width: auto;
         }
@@ -450,7 +451,6 @@ body {
     &__items-left {
         float: left;
         text-align: right;
-        border: 1px solid purple;
         width: 45%;
 
         @media @desktop {
@@ -461,23 +461,63 @@ body {
 
     &__items-right {
         float: right;
-        border: 1px solid green;
-
         width: 45%;
+
         @media @desktop {
             float: left;
             margin: 0 20px;
             width: auto;
         }
     }
+
+    //раскрытие списком по нажатию на кнопку на мобиле
+    &__checkbox-label {
+        display: inline-block;
+        margin:10px 0 0;
+        height: 20px;
+        width: 20px;
+        background: red;
+        border-radius: 50%;
+        transform: translate(0, 5px);
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__items {
+        height: 0;
+        transition: height 1s;
+        overflow: hidden;
+    }
+
+    &__checkbox:checked ~ &__items {
+        height: 140px;
+        transition: height 2s;
+    }
+
+    &__checkbox:checked ~ &__checkbox-label{
+        background: purple;
+    }
+
+
+
+
+
+
+
 }
 
-
-
 .advantage {
-    float: left;
+    width: 90%;
+    margin: 20px auto;
 
-    @media screen and (min-width: 1220px) {
+
+    @media @desktop {
+        float: left;
+    }
+
+    /*@media screen and (min-width: 1220px) {
         .advantage {
             margin: 0 0 0 40px;
         }
@@ -486,15 +526,21 @@ body {
         .advantage {
             margin: 10px 0 0 @sideWidth;
         }
-    }
-    margin: 10px 0 0 @sideWidth;
+    }*/
+
 
     //border: 1px solid red;
 
     &__item {
+        position: relative;
         clear: both;
-        margin: 0 0 26px;
+        margin: 0 0 20px;
         height: 24px;
+
+        @media @desktop {
+            margin: 0 0 26px;
+        }
+
     }
 
     &__icon {
@@ -503,32 +549,60 @@ body {
     }
 
     &__icon-wrap {
-        float: left;
+        position: absolute;
+        left: 20px;
         width: 40px;
         height: 24px;
-        text-align: right;
+
+
+        @media @desktop {
+            position: static;
+            float: left;
+        }
     }
 
     &__text {
-        float: left;
-        margin: 0 10px ;
+        //margin: 0 10px ;
+        margin: 0 0 0 70px;
         font-size: 14px;
         color: #3b3b3b;
         height: 20px;
-        line-height: 20px;
+        line-height: 24px;
+
+
+        @media @desktop {
+            float: left;
+            position: static;
+        }
+
     }
 }
 
 .social {
-    float: left;
-    margin: 0 0 0 40px;
-    //border: 1px solid red;
+    width: 90%;
+    margin: 40px auto;
+    @media @desktop {
+        float: left;
+        margin: 0 0 0 40px;
+    }
 
-    &__icon {
-        margin: 0 0 18px;
+    &__item {
+        float: left;
+        width: 32%;
+        text-align: center;
+    }
+
+    &__item a{
+        display: inline-block;
         height: 32px;
         width: 32px;
-        //border: 1px solid purple;
+    }
+
+
+    &__icon {
+        //margin: 0 0 18px;
+        height: 32px;
+        width: 32px;
     }
 
     &__facebook:hover {
@@ -547,15 +621,20 @@ body {
 }
 
 .privacy {
-    position: absolute;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 40px 0 40px 0;
     clear: both;
-    bottom: 120px;
-    //border: 1px solid purple;
-    //bottom: -40px;
     left: @sideWidth;
     font-size: 14px;
     color: #3b3b3b;
-    height: 20px;
+    //height: 20px;
     line-height: 20px;
+
+
+    @media @desktop {
+        position: absolute;
+        bottom: 120px;
+    }
 
 }
