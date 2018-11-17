@@ -44,7 +44,7 @@ body {
 
         //border: 1px dotted purple;
 
-        @media desctop {
+        @media @desktop {
             left: @sideWidth;
             top: 10px;
             width: 100px;
@@ -63,7 +63,7 @@ body {
 
         //border: 1px dotted purple;
 
-        @media desktop {
+        @media @desktop {
             left: 50%;
             top: 40px;
             transform: translate(-20px 0);
@@ -84,7 +84,7 @@ body {
 
         //border: 1px solid purple;
 
-        @media desktop {
+        @media @desktop {
             margin-right: 100px;
             margin-top: 50px;
             right: 0;
@@ -114,7 +114,7 @@ body {
     &__item:first-child {
         margin-left: 10px;
 
-        @media desctop {
+        @media @desktop {
             margin-left: @sideWidth;
         }
     }
@@ -135,22 +135,17 @@ body {
         border: #b8b8b4;
         border-radius: 3px;
 
-        border: 1px solid purple;
     }
 
     &__search-icon {
         position: absolute;
-        right: 13px;
-        top: 8px;
+        right: 14px;
+        top: 9px;
         padding: 8px;
         //margin: 2px @sideWidth 0 0;
         width: 16px;
         height: 16px;
         opacity: .3;
-        border: 1px solid purple;
-
-
-
     }
 
     &__search-icon:hover {
@@ -159,8 +154,12 @@ body {
 }
 
 .breadcrumbs {
-    margin: 40px @sideWidth 0;
     padding: 0;
+    margin: 10px;
+
+    @media @desktop {
+        margin: 40px @sideWidth 0;
+    }
 
     &__link_current {
         text-decoration: none;
@@ -181,39 +180,64 @@ body {
 }
 
 .item {
-    margin: 15px @sideWidth 0;
-    height: 800px;
+    position: relative;
     width: 100%;
 
-    &__image-wrap{
-        float: left;
-        display: inline-block;
-        //height: 700px;
-        //width: 700px;
-        margin-right: 40px;
-        min-width: 40%;
-        min-height: 40%;
-
-        border: 1px solid black;
-
-        overflow:hidden;
+    @media @desktop {
+        margin: 15px @sideWidth 0;
+        padding: 0;
+        height: 800px;
     }
+
+    &__image-wrap{
+        width: 95%;
+        position: relative;
+        margin: 0 auto;
+
+        @media @desktop {
+            float: left;
+            display: inline-block;
+            //height: 700px;
+            //width: 700px;
+            margin-right: 40px;
+            min-width: 40%;
+            min-height: 40%;
+        }
+    }
+
     &__image {
         position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
 
-        display: block;
-        width: 700px;
-        transition: opacity 2s;
-        max-width: 40%;
+        @media @desktop {
+            width: 100%;
+            transition: opacity 2s;
+            max-width: 700px;
+        }
+    }
+
+    &__image-real {
+        position: static;
+        width: 100%;
     }
 
     &__information {
-        float: left;
-        min-width: 400px;
-        border: 1px solid black;
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+
+        @media @desktop {
+            float: left;
+            min-width: 400px;
+            text-align: left;
+            border: 1px solid black;
+        }
     }
 
-    &__name> h2 {
+    &__name > h2 {
         font-size: 34px;
         font-weight: 700;
     }
@@ -228,11 +252,15 @@ body {
         color: @redColor;
         font-size: 34px;
         font-weight: 700;
+        margin: 30px 0 0;
+        @media @desktop {
+            margin: 0;
+        }
     }
 
     &__buy-button {
         border: none;
-        padding: 0px;
+        padding: 0;
         width: 200px;
         height: 80px;
         background-color: @redColor;
@@ -244,12 +272,13 @@ body {
     &__later {
         position: relative;
         height: 36px;
-        width: 300px;
-        margin: 30px 0 0;
+        width: 180px;
+        margin: 30px auto;
     }
 
     &__later-icon {
         position: absolute;
+        left: 0;
         width: 26px;
         height: 26px;
         fill: gray;
@@ -265,12 +294,16 @@ body {
     }
 
     &__later-link:hover + &__later-icon {
-        fill: #ff99cc;
+        @media @desktop {
+            fill: #ff99cc;
+        }
     }
 
     &__later-link:hover {
-        text-decoration-color: #4b4b4b;
-        color: #4b4b4b;
+        @media @desktop {
+            text-decoration-color: #4b4b4b;
+            color: #4b4b4b;
+        }
     }
 
     &__picker-button {
@@ -292,7 +325,7 @@ body {
         color: black;
     }
 
-    &__picker-button#item-color1  + span{
+    &__picker-button#item-color1 + span{
         background: @item-color1;
     }
 
@@ -319,7 +352,11 @@ body {
     }
 
     &__size-picker {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+
+        @media @desktop {
+            margin-bottom: 40px;
+        }
     }
 
     &__color-picker {
@@ -331,43 +368,73 @@ body {
 
 .footer {
     position: relative;
-
     background: @menuColor;
     border-top: 1px solid #cbcbc7;
     clear: both;
 
-    @media screen and (min-width: 1220px) {
-        .footer {
-            height: 430px;
-        }
-    }
     height: 530px;
+
+    @media @desktop {
+        height: 430px;
+
+    }
 }
 
 .bottom-menu {
-    float: left;
-    //border: 1px solid red;
+    border: 1px solid red;
+
+    @media @desktop {
+        float: left;
+    }
 
     &__wrap {
-        margin-top: 55px;
+        margin-top: 30px;
+
+        @media @desktop {
+            margin-top: 55px;
+        }
+        border: 1px solid red;
     }
 
     &__support {
-        margin: 0 0 0 @sideWidth;
+        height: 180px;
+        width: 90%;
+        margin: 0 auto;
+        @media @desktop {
+            margin: 0 0 0 @sideWidth;
+            width: auto;
+        }
+
+
+        border: 1px solid purple;
     }
 
     &__about {
-        margin: 0 0 0 40px;
+        width: 90%;
+        margin: 10px auto 0;
+        height: 160px;
+        @media @desktop {
+            margin: 0 0 0 40px;
+            width: auto;
+        }
     }
 
     &__head {
+        text-align: center;
         font-size: 16px;
         font-weight: 700;
         margin-bottom: 20px;
     }
 
     &__item {
+        width: 100%;
         margin: 0 0 10px;
+
+
+        border: 1px solid blue;
+        @media @desktop {
+            width: auto;
+        }
     }
 
     &__item > a {
@@ -382,11 +449,26 @@ body {
 
     &__items-left {
         float: left;
+        text-align: right;
+        border: 1px solid purple;
+        width: 45%;
+
+        @media @desktop {
+            text-align: left;
+            width: auto;
+        }
     }
 
     &__items-right {
-        float: left;
-        margin: 0 20px;
+        float: right;
+        border: 1px solid green;
+
+        width: 45%;
+        @media @desktop {
+            float: left;
+            margin: 0 20px;
+            width: auto;
+        }
     }
 }
 

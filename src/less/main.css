@@ -327,7 +327,7 @@ body {
   width: 40%;
   height: 40px;
 }
-@media desctop {
+@media only screen and (min-width: 992px) {
   .topLine__shopLogo {
     left: 100px;
     top: 10px;
@@ -344,7 +344,7 @@ body {
   width: 40px;
   height: 40px;
 }
-@media desktop {
+@media only screen and (min-width: 992px) {
   .topLine__OggettoLogo {
     left: 50%;
     top: 40px;
@@ -362,7 +362,7 @@ body {
   font-size: 24px;
   font-weight: 700;
 }
-@media desktop {
+@media only screen and (min-width: 992px) {
   .topLine__number {
     margin-right: 100px;
     margin-top: 50px;
@@ -390,7 +390,7 @@ body {
 .menu__item:first-child {
   margin-left: 10px;
 }
-@media desctop {
+@media only screen and (min-width: 992px) {
   .menu__item:first-child {
     margin-left: 100px;
   }
@@ -408,24 +408,27 @@ body {
   width: 40px;
   border: #b8b8b4;
   border-radius: 3px;
-  border: 1px solid purple;
 }
 .menu__search-icon {
   position: absolute;
-  right: 13px;
-  top: 8px;
+  right: 14px;
+  top: 9px;
   padding: 8px;
   width: 16px;
   height: 16px;
   opacity: 0.3;
-  border: 1px solid purple;
 }
 .menu__search-icon:hover {
   opacity: 0.6;
 }
 .breadcrumbs {
-  margin: 40px 100px 0;
   padding: 0;
+  margin: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .breadcrumbs {
+    margin: 40px 100px 0;
+  }
 }
 .breadcrumbs__link_current {
   text-decoration: none;
@@ -441,30 +444,60 @@ body {
   display: inline;
 }
 .item {
-  margin: 15px 100px 0;
-  height: 800px;
+  position: relative;
   width: 100%;
 }
+@media only screen and (min-width: 992px) {
+  .item {
+    margin: 15px 100px 0;
+    padding: 0;
+    height: 800px;
+  }
+}
 .item__image-wrap {
-  float: left;
-  display: inline-block;
-  margin-right: 40px;
-  min-width: 40%;
-  min-height: 40%;
-  border: 1px solid black;
-  overflow: hidden;
+  width: 95%;
+  position: relative;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 992px) {
+  .item__image-wrap {
+    float: left;
+    display: inline-block;
+    margin-right: 40px;
+    min-width: 40%;
+    min-height: 40%;
+  }
 }
 .item__image {
   position: absolute;
-  display: block;
-  width: 700px;
-  transition: opacity 2s;
-  max-width: 40%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+@media only screen and (min-width: 992px) {
+  .item__image {
+    width: 100%;
+    transition: opacity 2s;
+    max-width: 700px;
+  }
+}
+.item__image-real {
+  position: static;
+  width: 100%;
 }
 .item__information {
-  float: left;
-  min-width: 400px;
-  border: 1px solid black;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .item__information {
+    float: left;
+    min-width: 400px;
+    text-align: left;
+    border: 1px solid black;
+  }
 }
 .item__name > h2 {
   font-size: 34px;
@@ -479,10 +512,16 @@ body {
   color: #c30000;
   font-size: 34px;
   font-weight: 700;
+  margin: 30px 0 0;
+}
+@media only screen and (min-width: 992px) {
+  .item__price {
+    margin: 0;
+  }
 }
 .item__buy-button {
   border: none;
-  padding: 0px;
+  padding: 0;
   width: 200px;
   height: 80px;
   background-color: #c30000;
@@ -492,11 +531,12 @@ body {
 .item__later {
   position: relative;
   height: 36px;
-  width: 300px;
-  margin: 30px 0 0;
+  width: 180px;
+  margin: 30px auto;
 }
 .item__later-icon {
   position: absolute;
+  left: 0;
   width: 26px;
   height: 26px;
   fill: gray;
@@ -508,12 +548,16 @@ body {
   font-size: 16px;
   color: gray;
 }
-.item__later-link:hover + .item__later-icon {
-  fill: #ff99cc;
+@media only screen and (min-width: 992px) {
+  .item__later-link:hover + .item__later-icon {
+    fill: #ff99cc;
+  }
 }
-.item__later-link:hover {
-  text-decoration-color: #4b4b4b;
-  color: #4b4b4b;
+@media only screen and (min-width: 992px) {
+  .item__later-link:hover {
+    text-decoration-color: #4b4b4b;
+    color: #4b4b4b;
+  }
 }
 .item__picker-button {
   display: none;
@@ -553,7 +597,12 @@ body {
   padding: 1px;
 }
 .item__size-picker {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .item__size-picker {
+    margin-bottom: 40px;
+  }
 }
 .item__color-picker {
   margin-bottom: 40px;
@@ -565,30 +614,66 @@ body {
   clear: both;
   height: 530px;
 }
-@media screen and (min-width: 1220px) {
-  .footer .footer {
+@media only screen and (min-width: 992px) {
+  .footer {
     height: 430px;
   }
 }
 .bottom-menu {
-  float: left;
+  border: 1px solid red;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu {
+    float: left;
+  }
 }
 .bottom-menu__wrap {
-  margin-top: 55px;
+  margin-top: 30px;
+  border: 1px solid red;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__wrap {
+    margin-top: 55px;
+  }
 }
 .bottom-menu__support {
-  margin: 0 0 0 100px;
+  height: 180px;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid purple;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__support {
+    margin: 0 0 0 100px;
+    width: auto;
+  }
 }
 .bottom-menu__about {
-  margin: 0 0 0 40px;
+  width: 90%;
+  margin: 10px auto 0;
+  height: 160px;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__about {
+    margin: 0 0 0 40px;
+    width: auto;
+  }
 }
 .bottom-menu__head {
+  text-align: center;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 .bottom-menu__item {
+  width: 100%;
   margin: 0 0 10px;
+  border: 1px solid blue;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__item {
+    width: auto;
+  }
 }
 .bottom-menu__item > a {
   text-decoration: none;
@@ -600,10 +685,27 @@ body {
 }
 .bottom-menu__items-left {
   float: left;
+  text-align: right;
+  border: 1px solid purple;
+  width: 45%;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__items-left {
+    text-align: left;
+    width: auto;
+  }
 }
 .bottom-menu__items-right {
-  float: left;
-  margin: 0 20px;
+  float: right;
+  border: 1px solid green;
+  width: 45%;
+}
+@media only screen and (min-width: 992px) {
+  .bottom-menu__items-right {
+    float: left;
+    margin: 0 20px;
+    width: auto;
+  }
 }
 .advantage {
   float: left;
