@@ -25,12 +25,16 @@ body {
         left: 10%;
         top: 20px;
         width: 40%;
+        max-width: 200px;
         height: 40px;
+
+        @media @tablet {
+            top: 30px;
+        }
         @media @desktop {
             left: @sideWidth;
             top: 10px;
             width: 100px;
-            height: 100px;
         }
     }
 
@@ -42,13 +46,14 @@ body {
         fill: @redColor;
         width: 40px;
         height: 40px;
+
+        @media @tablet {
+            right: 50%;
+            top: 30px;
+        }
         @media @desktop {
-            left: 50%;
+            right: 50%;
             top: 40px;
-            transform: translate(-20px 0);
-            fill: @redColor;
-            width: 40px;
-            height: 40px;
         }
     }
 
@@ -59,14 +64,16 @@ body {
         color: @redColor;
         font-size: 24px;
         font-weight: 700;
-        @media @desktop {
-            margin-right: 100px;
-            margin-top: 50px;
-            right: 0;
+
+        @media @tablet {
+            right: 10%;
             top: 0;
-            color: @redColor;
+            line-height: 100px;
+        }
+        @media @desktop {
+            right: 100px;
+            top: 50px;
             font-size: 20px;
-            font-weight: 700;
         }
     }
 }
@@ -101,6 +108,10 @@ body {
         top: 10px;
         z-index: 1;
         transition: height 1s;
+        @media @tablet {
+            height: auto;
+            top: 0;
+        }
     }
 
     &__open-checkbox:checked ~ label &__button{
@@ -113,19 +124,24 @@ body {
 
     &__item {
         color: @redColor;
-        display: block;
-        width: 100%;
         height: 40px;
         line-height: 40px;
         text-align: center;
         background: @menuColor;
+        display: block;
+        width: 100%;
         border-bottom: 1px solid gray;
 
-
-        @media @desktop {
+        @media @tablet {
             display: inline-block;
+            width: auto;
+            border-bottom: none;
+            line-height: 40px;
             margin-right: 10px;
-            line-height: @top-menu-height;
+        }
+        @media @desktop {
+            margin-right: 10px;
+            display: inline-block;
             color: @redColor;
             font-size: 14px;
         }
@@ -134,6 +150,12 @@ body {
     &__item:first-child {
         margin-top: 10px;
         padding-top: 10px;
+
+        @media @tablet {
+            margin-top: 5px;
+            padding-top: 0;
+            margin-left: 5%;
+        }
         @media @desktop {
             margin-left: @sideWidth;
         }
@@ -174,6 +196,9 @@ body {
     padding: 0;
     margin: 10px;
 
+    @media @tablet {
+        margin-left: 5%;
+    }
     @media @desktop {
         margin: 40px @sideWidth 0;
     }
@@ -211,6 +236,9 @@ body {
         position: relative;
         margin: 0 auto;
 
+        @media @tablet {
+            width: 90%;
+        }
         @media @desktop {
             float: left;
             display: inline-block;
@@ -272,12 +300,17 @@ body {
 
     &__buy-button {
         border: none;
+        margin-top: 20px;
         padding: 0;
         width: 200px;
         height: 80px;
         background-color: @redColor;
         color: white;
         font-size: 24px;
+
+        @media @tablet {
+            margin-top: 160px;
+        }
     }
 
     &__later {
@@ -370,7 +403,23 @@ body {
     }
 
     &__color-picker {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+    }
+
+    &__size-wrap {
+        @media @tablet {
+            position: absolute;
+            width: 300px;
+            right: 51%;
+        }
+    }
+
+    &__color-wrap {
+        @media @tablet {
+            position: absolute;
+            left: 51%;
+            width: 300px;
+        }
     }
 }
 
@@ -385,6 +434,11 @@ body {
 }
 
 .bottom-menu {
+    @media @tablet {
+        position: absolute;
+        top: 40px;
+    }
+
 
     @media @desktop {
         float: left;
@@ -401,6 +455,11 @@ body {
     &__support {
         width: 90%;
         margin: 0 auto;
+
+        @media @tablet {
+            width: 40%;
+            left: 10%;
+        }
         @media @desktop {
             margin: 0 0 0 @sideWidth;
             width: auto;
@@ -410,6 +469,12 @@ body {
     &__about {
         width: 90%;
         margin: 10px auto 0;
+
+        @media @tablet {
+            right: 10%;
+            width: 40%;
+            margin-top: 0;
+        }
         @media @desktop {
             margin: 0 0 0 40px;
             width: auto;
@@ -483,6 +548,10 @@ body {
         margin: 10px 0 0;
         transition: height 1s;
         overflow: hidden;
+
+        @media @tablet {
+            height: auto;
+        }
     }
 
     &__checkbox:checked ~ &__items {
@@ -496,9 +565,12 @@ body {
 }
 
 .advantage {
-    width: 90%;
     margin: 20px auto;
+    width: 370px;
 
+    @media @tablet {
+        margin-top: 230px;
+    }
     @media @desktop {
         float: left;
     }
@@ -601,6 +673,9 @@ body {
 }
 
 .mobile-only{
+    @media @tablet {
+        display: none;
+    }
     @media @desktop {
         display: none;
     }

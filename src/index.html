@@ -33,11 +33,11 @@
         </label>
 
         <div class="menu__all-items">
-        <a href="#" class="menu__item menu__item_current">LISP</a>
-        <a href="#" class="menu__item">OCaml</a>
-        <a href="#" class="menu__item">JavaScript</a>
-        <a href="#" class="menu__item">Python</a>
-        <a href="#" class="menu__item">PHP</a>
+            <a href="#" class="menu__item menu__item_current">LISP</a>
+            <a href="#" class="menu__item">OCaml</a>
+            <a href="#" class="menu__item">JavaScript</a>
+            <a href="#" class="menu__item">Python</a>
+            <a href="#" class="menu__item">PHP</a>
         </div>
         <form action="">
             <input type="search" class="menu__search">
@@ -65,38 +65,44 @@
             <div class="item__text">Состав: 100% хлопок, динамическая типизация, польская нотация.</div>
             <div class="item__text"> Производство: Россия.</div>
             <div class="item__price">1500&#8381;</div>
-            <div class="item__text">Размер:</div>
-            <div class="item__size-picker">
-                <label>
-                    <input type="radio" name="size" class="item__picker-button" value="0">
-                    <span>S</span>
-                </label>
-                <label>
-                    <input type="radio" name="size" class="item__picker-button" checked="checked" value="1">
-                    <span>M</span>
-                </label>
-                <label>
-                    <input type="radio" name="size" class="item__picker-button" value="2">
-                    <span>L</span>
-                </label>
-            </div>
-            <div class="item__text">Цвет:</div>
-            <div class="item__color-picker">
-                <label>
-                    <input type="radio" name="color" class="item__picker-button" id="item-color1" checked="checked"
-                           value="0">
-                    <span class="colored"></span>
-                </label>
-                <label>
-                    <input type="radio" name="color" class="item__picker-button" id="item-color2" value="1">
-                    <span class="colored"></span>
-                </label>
-                <label>
-                    <input type="radio" name="color" class="item__picker-button" id="item-color3" value="2">
-                    <span class="colored"></span>
-                </label>
-            </div>
-            <button class="item__buy-button">Купить</button>
+            <form action="">
+                <div class="item__size-wrap">
+                    <div class="item__text">Размер:</div>
+                    <div class="item__size-picker">
+                        <label>
+                            <input type="radio" name="size" class="item__picker-button" value="0">
+                            <span>S</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" class="item__picker-button" checked="checked" value="1">
+                            <span>M</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" class="item__picker-button" value="2">
+                            <span>L</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="item__color-wrap">
+                    <div class="item__text">Цвет:</div>
+                    <div class="item__color-picker">
+                        <label>
+                            <input type="radio" name="color" class="item__picker-button" id="item-color1" checked="checked"
+                                   value="0">
+                            <span class="colored"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" class="item__picker-button" id="item-color2" value="1">
+                            <span class="colored"></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" class="item__picker-button" id="item-color3" value="2">
+                            <span class="colored"></span>
+                        </label>
+                    </div>
+                </div>
+                <button class="item__buy-button">Купить</button>
+            </form>
             <div class="item__later">
                 <a href="#" class="item__later-link">Отложить на потом</a>
                 <svg class="item__later-icon">
