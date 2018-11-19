@@ -16,7 +16,7 @@ function init() {
 }
 
 function changeImage(value) {
-    const path = '../img/tshirts/';
+    const path = 'img/tshirts/';
 
     const fileNames = [
         'tshirt_white.jpg',
