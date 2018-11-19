@@ -25,7 +25,4 @@ function changeImage(value) {
 
     const imageElem = document.getElementsByClassName('item__image')[0];
     imageElem.src = path + fileNames [value];
-
 }
-
-

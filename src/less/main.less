@@ -8,6 +8,7 @@
 @item-color1: #fffafb;
 @item-color2: #e3d95e;
 @item-color3: #a5af96;
+@footer_margin: 5%;
 
 body {
     background: white;
@@ -49,8 +50,6 @@ body {
             right: 50%;
             top: 30px;
         }
-        @media @desktop {
-        }
     }
 
     &__number {
@@ -81,7 +80,7 @@ body {
     height: @top-menu-height;
 
     &__open-checkbox {
-      display: none;
+        display: none;
     }
 
     &__button {
@@ -354,7 +353,7 @@ body {
     }
 
     &__picker-button {
-        //display: none;
+        display: none;
     }
 
     &__picker-button + span {
@@ -476,6 +475,9 @@ body {
             margin: 0 0 0 @sideWidth;
             width: auto;
         }
+        @media @large {
+            margin-left: @footer_margin;
+        }
     }
 
     &__about {
@@ -490,6 +492,9 @@ body {
         @media @desktop {
             margin: 0 0 0 3%;
             width: auto;
+        }
+        @media @large {
+            margin-left: @footer_margin;
         }
     }
 
@@ -589,6 +594,10 @@ body {
         margin-top: 0;
         margin-left: 3%;
     }
+
+    @media @large {
+        margin-left: @footer_margin;
+    }
     //border: 1px solid red;
 
     &__item {
@@ -639,6 +648,10 @@ body {
         float: left;
         margin: 0 0 0 3%;
         width: auto;
+    }
+
+    @media @large {
+        margin-left: @footer_margin;
     }
 
     &__item {
