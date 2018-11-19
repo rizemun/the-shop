@@ -1,5 +1,6 @@
 @import (less) '../../node_modules/normalize.css/normalize.css';
 @import (less) '_media.less';
+
 @redColor: #c30000;
 @menuColor: #f4f4ef;
 @top-menu-height: 50px;
@@ -8,33 +9,14 @@
 @item-color2: #e3d95e;
 @item-color3: #a5af96;
 
-
-@media screen and (min-width: 1220px) {
-
-}
-@media screen and (max-width: 1220px) {
-
-}
-
-html {
-    padding: 0;
-}
 body {
     background: white;
     font-family: Roboto, sans-serif;
 }
 
-.invisible {
-    opacity: 0;
-}
-
-.visible {
-    opacity: 1;
-}
 
 .topLine {
     margin: 0;
-    //padding: 10px;
     height: 100px;
     width: 100%;
 
@@ -44,9 +26,6 @@ body {
         top: 20px;
         width: 40%;
         height: 40px;
-
-        //border: 1px dotted purple;
-
         @media @desktop {
             left: @sideWidth;
             top: 10px;
@@ -63,9 +42,6 @@ body {
         fill: @redColor;
         width: 40px;
         height: 40px;
-
-        //border: 1px dotted purple;
-
         @media @desktop {
             left: 50%;
             top: 40px;
@@ -74,7 +50,6 @@ body {
             width: 40px;
             height: 40px;
         }
-
     }
 
     &__number {
@@ -84,9 +59,6 @@ body {
         color: @redColor;
         font-size: 24px;
         font-weight: 700;
-
-        //border: 1px solid purple;
-
         @media @desktop {
             margin-right: 100px;
             margin-top: 50px;
@@ -106,17 +78,64 @@ body {
     background: @menuColor;
     height: @top-menu-height;
 
+    &__open-checkbox{
+        display: none;
+    }
+
+    &__button {
+        display: block;
+        width: 30px;
+        height: 30px;
+        //border: 1px solid #999;
+        border-radius: 5px;
+        transform: translate(10px, 10px);
+        background: url("../img/icons/menu.svg#menu");
+        opacity: .5;
+        transition: opacity 1s;
+    }
+
+
+    &__all-items{
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        top: 10px;
+        z-index: 1;
+        transition: height 1s;
+    }
+
+    &__open-checkbox:checked ~ label &__button{
+        opacity: .9;
+    }
+
+    &__open-checkbox:checked ~ &__all-items{
+        height: 400px;
+    }
+
     &__item {
-        display: inline-block;
-        margin-right: 10px;
-        line-height: @top-menu-height;
         color: @redColor;
-        font-size: 14px;
+        display: block;
+        width: 100%;
+        //border: 1px solid purple;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: @menuColor;
+        border-bottom: 1px solid gray;
+
+
+        @media @desktop {
+            display: inline-block;
+            margin-right: 10px;
+            line-height: @top-menu-height;
+            color: @redColor;
+            font-size: 14px;
+        }
     }
 
     &__item:first-child {
-        margin-left: 10px;
-
+        margin-top: 10px;
+        padding-top: 10px;
         @media @desktop {
             margin-left: @sideWidth;
         }
@@ -132,12 +151,10 @@ body {
         position: absolute;
         right: 10px;
         top: 5px;
-        //margin: 5px  10px 0;
         height: 40px;
-        width: 40px;
+        width: 240px;
         border: #b8b8b4;
         border-radius: 3px;
-
     }
 
     &__search-icon {
@@ -145,7 +162,6 @@ body {
         right: 14px;
         top: 9px;
         padding: 8px;
-        //margin: 2px @sideWidth 0 0;
         width: 16px;
         height: 16px;
         opacity: .3;
@@ -192,7 +208,7 @@ body {
         height: 800px;
     }
 
-    &__image-wrap{
+    &__image-wrap {
         width: 95%;
         position: relative;
         margin: 0 auto;
@@ -200,8 +216,6 @@ body {
         @media @desktop {
             float: left;
             display: inline-block;
-            //height: 700px;
-            //width: 700px;
             margin-right: 40px;
             min-width: 40%;
             min-height: 40%;
@@ -210,10 +224,12 @@ body {
 
     &__image {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
+        //left: 0;
+        //right: 0;
+        //top: 0;
+        //bottom: 0;
+        width: 100%;
+        z-index: inherit;
 
         @media @desktop {
             width: 100%;
@@ -270,7 +286,6 @@ body {
         font-size: 24px;
     }
 
-
     &__later {
         position: relative;
         height: 36px;
@@ -289,7 +304,6 @@ body {
     &__later-link {
         position: absolute;
         left: 26px;
-        //float: left;
         margin: 4px 0 0 5px;
         font-size: 16px;
         color: gray;
@@ -297,7 +311,7 @@ body {
 
     &__later-link:hover + &__later-icon {
         @media @desktop {
-            fill: #ff99cc;
+            fill: #f9c;
         }
     }
 
@@ -327,7 +341,7 @@ body {
         color: black;
     }
 
-    &__picker-button#item-color1 + span{
+    &__picker-button#item-color1 + span {
         background: @item-color1;
     }
 
@@ -364,8 +378,6 @@ body {
     &__color-picker {
         margin-bottom: 40px;
     }
-
-
 }
 
 .footer {
@@ -373,12 +385,8 @@ body {
     background: @menuColor;
     border-top: 1px solid #cbcbc7;
     clear: both;
-
-    //height: 530px;
-
     @media @desktop {
         height: 430px;
-
     }
 }
 
@@ -397,11 +405,8 @@ body {
     }
 
     &__support {
-        //height: 180px;
         width: 90%;
         margin: 0 auto;
-        //border: 1px solid red;
-        //height: 0;
         @media @desktop {
             margin: 0 0 0 @sideWidth;
             width: auto;
@@ -411,8 +416,7 @@ body {
     &__about {
         width: 90%;
         margin: 10px auto 0;
-        height: 160px;
-        //border: 1px solid red;
+        //height: 160px;
         @media @desktop {
             margin: 0 0 0 40px;
             width: auto;
@@ -423,16 +427,11 @@ body {
         text-align: center;
         font-size: 16px;
         font-weight: 700;
-        padding: 20px;
     }
-
-
-
 
     &__item {
         width: 100%;
         margin: 0 0 10px;
-
         @media @desktop {
             width: auto;
         }
@@ -473,12 +472,14 @@ body {
     //раскрытие списком по нажатию на кнопку на мобиле
     &__checkbox-label {
         display: inline-block;
-        margin:10px 0 0;
+        margin: 10px 0 0 10px;
         height: 20px;
         width: 20px;
-        background: red;
+        background: url("../img/icons/more.svg");
         border-radius: 50%;
         transform: translate(0, 5px);
+
+        transition: transform 1s;
     }
 
     &__checkbox {
@@ -487,6 +488,7 @@ body {
 
     &__items {
         height: 0;
+        margin: 10px 0 0;
         transition: height 1s;
         overflow: hidden;
     }
@@ -496,39 +498,18 @@ body {
         transition: height 2s;
     }
 
-    &__checkbox:checked ~ &__checkbox-label{
-        background: purple;
+    &__checkbox:checked ~ &__head &__checkbox-label {
+        transform: translate(0, 5px) rotate(45deg);
     }
-
-
-
-
-
-
-
 }
 
 .advantage {
     width: 90%;
     margin: 20px auto;
 
-
     @media @desktop {
         float: left;
     }
-
-    /*@media screen and (min-width: 1220px) {
-        .advantage {
-            margin: 0 0 0 40px;
-        }
-    }
-    @media screen and (max-width: 1220px) {
-        .advantage {
-            margin: 10px 0 0 @sideWidth;
-        }
-    }*/
-
-
     //border: 1px solid red;
 
     &__item {
@@ -540,7 +521,6 @@ body {
         @media @desktop {
             margin: 0 0 26px;
         }
-
     }
 
     &__icon {
@@ -553,7 +533,6 @@ body {
         left: 20px;
         width: 40px;
         height: 24px;
-
 
         @media @desktop {
             position: static;
@@ -569,12 +548,10 @@ body {
         height: 20px;
         line-height: 24px;
 
-
         @media @desktop {
             float: left;
             position: static;
         }
-
     }
 }
 
@@ -592,12 +569,11 @@ body {
         text-align: center;
     }
 
-    &__item a{
+    &__item a {
         display: inline-block;
         height: 32px;
         width: 32px;
     }
-
 
     &__icon {
         //margin: 0 0 18px;
@@ -616,25 +592,38 @@ body {
     &__instagram:hover {
         fill: #8b398e;
     }
-
-
 }
 
 .privacy {
     width: 90%;
     margin: 40px auto 0;
-    padding: 40px 0 40px 0;
+    padding: 40px 0;
     clear: both;
     left: @sideWidth;
     font-size: 14px;
     color: #3b3b3b;
-    //height: 20px;
     line-height: 20px;
-
-
     @media @desktop {
         position: absolute;
         bottom: 120px;
     }
+}
 
+
+
+.mobile-only{
+    @media @desktop {
+        display: none;
+    }
+}
+
+.invisible {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.visible {
+    opacity: 1;
+    position: static;
 }

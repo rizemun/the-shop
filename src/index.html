@@ -18,7 +18,7 @@
     <div class="topLine">
         <img alt="" class="topLine__shopLogo" src="img/the_shop_logo.svg">
         <svg class="topLine__OggettoLogo">
-            <use xlink:href = "img/oggetto_logo.svg#ogg-logo"></use>
+            <use xlink:href="img/oggetto_logo.svg#ogg-logo"></use>
         </svg>
         <div class="topLine__number">
             +7 (812) 2&#8226;12&#8226;85&#8226;06
@@ -26,18 +26,25 @@
     </div>
 
     <nav class="menu">
+
+        <input type="checkbox" class="menu__open-checkbox" id="menu__open-checkbox">
+        <label for="menu__open-checkbox">
+            <span class="menu__button mobile-only"></span>
+        </label>
+
+        <div class="menu__all-items">
         <a href="#" class="menu__item menu__item_current">LISP</a>
         <a href="#" class="menu__item">OCaml</a>
         <a href="#" class="menu__item">JavaScript</a>
         <a href="#" class="menu__item">Python</a>
         <a href="#" class="menu__item">PHP</a>
+        </div>
         <form action="">
             <input type="search" class="menu__search">
-            <input type="image" alt="" src="/img/icons/search-image.svg"  class="menu__search-icon">
+            <input type="image" alt="" src="img/icons/search-image.svg" class="menu__search-icon">
         </form>
     </nav>
 </header>
-
 <article>
     <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">LISP</a></li>
@@ -49,9 +56,9 @@
 
     <div class="item">
         <div class="item__image-wrap">
-                <img alt="" id="im1" class="item__image visible item__image-real" src="/img/tshirts/tshirt_white.jpg">
-                <img alt="" id="im2" class="item__image invisible" src="/img/tshirts/tshirt_yellow.jpg">
-                <img alt="" id="im3" class="item__image invisible" src="/img/tshirts/tshirt_green.jpg">
+            <img alt="" id="im1" class="item__image visible item__image-real" src="img/tshirts/tshirt_white.jpg">
+            <img alt="" id="im2" class="item__image invisible" src="img/tshirts/tshirt_yellow.jpg">
+            <img alt="" id="im3" class="item__image invisible" src="img/tshirts/tshirt_green.jpg">
         </div>
         <div class="item__information">
             <div class="item__name"><h2>Футболка Alien technology</h2></div>
@@ -76,23 +83,24 @@
             <div class="item__text">Цвет:</div>
             <div class="item__color-picker">
                 <label>
-                <input type="radio" name="color" class="item__picker-button" id="item-color1" checked="checked" value="0">
-                <span class="colored"></span>
+                    <input type="radio" name="color" class="item__picker-button" id="item-color1" checked="checked"
+                           value="0">
+                    <span class="colored"></span>
                 </label>
                 <label>
-                <input type="radio" name="color" class="item__picker-button" id="item-color2" value="1">
-                <span class="colored"></span>
+                    <input type="radio" name="color" class="item__picker-button" id="item-color2" value="1">
+                    <span class="colored"></span>
                 </label>
                 <label>
-                <input type="radio" name="color" class="item__picker-button" id="item-color3" value="2">
-                <span class="colored"></span>
+                    <input type="radio" name="color" class="item__picker-button" id="item-color3" value="2">
+                    <span class="colored"></span>
                 </label>
             </div>
             <button class="item__buy-button">Купить</button>
             <div class="item__later">
                 <a href="#" class="item__later-link">Отложить на потом</a>
                 <svg class="item__later-icon">
-                    <use xlink:href="/img/icons/heart-full.svg#s-heart"></use>
+                    <use xlink:href="img/icons/heart-full.svg#s-heart"></use>
                 </svg>
             </div>
         </div>
@@ -101,15 +109,14 @@
 <footer class="footer">
     <div class="bottom-menu__wrap">
         <nav class="bottom-menu__support bottom-menu">
+            <input id="bottom-menu__checkbox-service" type="checkbox" class="bottom-menu__checkbox">
             <div class="bottom-menu__head">
                 Сервис и поддержка
-                <label for="bottom-menu__checkbox">
-                <span class="bottom-menu__checkbox-label"></span>
-            </label></div>
+                <label for="bottom-menu__checkbox-service">
+                    <span class="bottom-menu__checkbox-label mobile-only"></span>
+                </label>
+            </div>
             <!--<div class="bottom-menu__increase-btn mobile-only"></div>-->
-            <input id="bottom-menu__checkbox" type="checkbox" class="bottom-menu__checkbox">
-
-
 
 
             <div class="bottom-menu__items">
@@ -122,29 +129,38 @@
                 <div class="bottom-menu__items-right">
                     <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Способы оплаты</a></div>
                     <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Правила продажи</a></div>
-                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Возврат денежных средств</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Возврат денежных средств</a>
+                    </div>
                     <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Вопросы и ответы</a></div>
                 </div>
             </div>
         </nav>
         <nav class="bottom-menu__about bottom-menu">
-            <div class="bottom-menu__head">О компании</div>
-            <div class="bottom-menu__items-left">
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">О нас</a></div>
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Контакты</a></div>
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Вакансии</a></div>
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Партнерам</a></div>
+            <input id="bottom-menu__checkbox-about" type="checkbox" class="bottom-menu__checkbox">
+
+            <div class="bottom-menu__head">О компании
+                <label for="bottom-menu__checkbox-about">
+                    <span class="bottom-menu__checkbox-label mobile-only"></span>
+                </label>
             </div>
-            <div class="bottom-menu__items-right">
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Сертификаты</a></div>
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Преимущества</a></div>
-                <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Наши скидки</a></div>
+            <div class="bottom-menu__items">
+                <div class="bottom-menu__items-left">
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">О нас</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Контакты</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Вакансии</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Партнерам</a></div>
+                </div>
+                <div class="bottom-menu__items-right">
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Сертификаты</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Преимущества</a></div>
+                    <div class="bottom-menu__item"><a href="#" class="bottom-menu__link">Наши скидки</a></div>
+                </div>
             </div>
         </nav>
         <div class="advantage">
             <div class="advantage__item">
                 <div class="advantage__icon-wrap">
-                    <img alt="" src="/img/icons/delivery.svg" class="advantage__icon">
+                    <img alt="" src="img/icons/delivery.svg" class="advantage__icon">
                 </div>
                 <div class="advantage__text">
                     Бесплатная доставка от 4000 &#8381;
@@ -152,7 +168,7 @@
             </div>
             <div class="advantage__item">
                 <div class="advantage__icon-wrap">
-                    <img alt="" src="/img/icons/heart.svg" class="advantage__icon">
+                    <img alt="" src="img/icons/heart.svg" class="advantage__icon">
                 </div>
                 <div class="advantage__text">
                     пробники в подарок при каждой покупке
@@ -160,7 +176,7 @@
             </div>
             <div class="advantage__item">
                 <div class="advantage__icon-wrap">
-                    <img alt="" src="/img/icons/price.svg" class="advantage__icon">
+                    <img alt="" src="img/icons/price.svg" class="advantage__icon">
                 </div>
                 <div class="advantage__text">
                     акции и подарки за покупку
@@ -169,23 +185,23 @@
         </div>
         <div class="social">
             <div class="social__item">
-                <a href = "#" class = "social__link">
-                <svg class="social__icon social__facebook" viewBox="0 0 22.8 44">
-                    <use xlink:href="/img/icons/facebook.svg#all"></use>
-                </svg>
-                </a>
-            </div>
-            <div class="social__item">
-                <a href = "#" class = "social__link">
-                    <svg class="social__icon social__twitter" viewBox="0 0 48.6 39.6">
-                        <use xlink:href="/img/icons/twitter.svg#all"></use>
+                <a href="#" class="social__link">
+                    <svg class="social__icon social__facebook" viewBox="0 0 22.8 44">
+                        <use xlink:href="img/icons/facebook.svg#all"></use>
                     </svg>
                 </a>
             </div>
             <div class="social__item">
-                <a href = "#" class = "social__link">
+                <a href="#" class="social__link">
+                    <svg class="social__icon social__twitter" viewBox="0 0 48.6 39.6">
+                        <use xlink:href="img/icons/twitter.svg#all"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="social__item">
+                <a href="#" class="social__link">
                     <svg class="social__icon social__instagram" viewBox="0 0 45.6 45.6">
-                        <use xlink:href="/img/icons/instagram.svg#all"></use>
+                        <use xlink:href="img/icons/instagram.svg#all"></use>
                     </svg>
                 </a>
             </div>
