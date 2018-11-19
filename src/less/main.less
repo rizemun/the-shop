@@ -33,7 +33,7 @@ body {
         }
         @media @desktop {
             left: @sideWidth;
-            top: 10px;
+            top: 30px;
             width: 100px;
         }
     }
@@ -42,7 +42,6 @@ body {
         position: absolute;
         right: 10%;
         top: 20px;
-        transform: translate(-20px 0);
         fill: @redColor;
         width: 40px;
         height: 40px;
@@ -52,8 +51,6 @@ body {
             top: 30px;
         }
         @media @desktop {
-            right: 50%;
-            top: 40px;
         }
     }
 
@@ -72,7 +69,6 @@ body {
         }
         @media @desktop {
             right: 100px;
-            top: 50px;
             font-size: 20px;
         }
     }
@@ -200,7 +196,7 @@ body {
         margin-left: 5%;
     }
     @media @desktop {
-        margin: 40px @sideWidth 0;
+        margin: 30px @sideWidth 0;
     }
 
     &__link_current {
@@ -228,7 +224,7 @@ body {
     @media @desktop {
         margin: 15px @sideWidth 0;
         padding: 0;
-        height: 800px;
+        height: 700px;
     }
 
     &__image-wrap {
@@ -241,10 +237,9 @@ body {
         }
         @media @desktop {
             float: left;
-            display: inline-block;
             margin-right: 40px;
-            min-width: 40%;
-            min-height: 40%;
+            width: 50%;
+            max-width: 700px;
         }
     }
 
@@ -272,7 +267,7 @@ body {
 
         @media @desktop {
             float: left;
-            min-width: 400px;
+            width: 40%;
             text-align: left;
         }
     }
@@ -280,6 +275,10 @@ body {
     &__name > h2 {
         font-size: 34px;
         font-weight: 700;
+
+        @media @desktop {
+            margin: 0;
+        }
     }
 
     &__text {
@@ -311,6 +310,9 @@ body {
         @media @tablet {
             margin-top: 160px;
         }
+        @media @desktop {
+            margin-top: 30px;
+        }
     }
 
     &__later {
@@ -318,6 +320,9 @@ body {
         height: 36px;
         width: 180px;
         margin: 30px auto;
+        @media @desktop {
+            margin-left: 0;
+        }
     }
 
     &__later-icon {
@@ -412,6 +417,9 @@ body {
             width: 300px;
             right: 51%;
         }
+        @media @desktop {
+            position: static;
+        }
     }
 
     &__color-wrap {
@@ -419,6 +427,10 @@ body {
             position: absolute;
             left: 51%;
             width: 300px;
+        }
+
+        @media @desktop {
+            position: static;
         }
     }
 }
@@ -428,8 +440,9 @@ body {
     background: @menuColor;
     border-top: 1px solid #cbcbc7;
     clear: both;
+
     @media @desktop {
-        height: 430px;
+        height: 330px;
     }
 }
 
@@ -439,9 +452,9 @@ body {
         top: 40px;
     }
 
-
     @media @desktop {
         float: left;
+        position: static;
     }
 
     &__wrap {
@@ -476,7 +489,7 @@ body {
             margin-top: 0;
         }
         @media @desktop {
-            margin: 0 0 0 40px;
+            margin: 0 0 0 3%;
             width: auto;
         }
     }
@@ -571,8 +584,11 @@ body {
     @media @tablet {
         margin-top: 230px;
     }
+
     @media @desktop {
         float: left;
+        margin-top: 0;
+        margin-left: 3%;
     }
     //border: 1px solid red;
 
@@ -612,7 +628,6 @@ body {
         line-height: 24px;
 
         @media @desktop {
-            float: left;
             position: static;
         }
     }
@@ -623,13 +638,19 @@ body {
     margin: 40px auto;
     @media @desktop {
         float: left;
-        margin: 0 0 0 40px;
+        margin: 0 0 0 3%;
+        width: auto;
     }
 
     &__item {
         float: left;
         width: 32%;
         text-align: center;
+
+        @media @desktop {
+            float: none;
+            margin-bottom: 10px;
+        }
     }
 
     &__item a {
@@ -668,7 +689,7 @@ body {
     line-height: 20px;
     @media @desktop {
         position: absolute;
-        bottom: 120px;
+        bottom: 20px;
     }
 }
 

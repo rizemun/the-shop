@@ -3,12 +3,13 @@ window.onload = init();
 
 
 function init() {
+    //берем все кнопки (label для радиокнопок) изменяющие размер и цвет
     const buttons = document.getElementsByClassName('item__picker-button');
     for (let i = 0; i < buttons.length; i++) {
+        //слушатель события изменения радиокнопки
         buttons[i].addEventListener('change', function(){
             if(this.name==='color'){
                 changeImage(this.value);
-
             }
         });
     }
