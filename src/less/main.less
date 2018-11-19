@@ -14,7 +14,6 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-
 .topLine {
     margin: 0;
     height: 100px;
@@ -81,8 +80,8 @@ body {
     background: @menuColor;
     height: @top-menu-height;
 
-    &__open-checkbox{
-        display: none;
+    &__open-checkbox {
+      display: none;
     }
 
     &__button {
@@ -96,13 +95,13 @@ body {
         transition: opacity 1s;
     }
 
-
-    &__all-items{
+    &__all-items {
         height: 0;
         overflow: hidden;
         position: relative;
         top: 10px;
         z-index: 1;
+        max-width: 500px;
         transition: height 1s;
         @media @tablet {
             height: auto;
@@ -110,11 +109,11 @@ body {
         }
     }
 
-    &__open-checkbox:checked ~ label &__button{
+    &__open-checkbox:checked ~ label &__button {
         opacity: .9;
     }
 
-    &__open-checkbox:checked ~ &__all-items{
+    &__open-checkbox:checked ~ &__all-items {
         height: 400px;
     }
 
@@ -355,7 +354,7 @@ body {
     }
 
     &__picker-button {
-        display: none;
+        //display: none;
     }
 
     &__picker-button + span {
@@ -693,7 +692,7 @@ body {
     }
 }
 
-.mobile-only{
+.mobile-only {
     @media @tablet {
         display: none;
     }
