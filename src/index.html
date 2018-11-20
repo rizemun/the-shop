@@ -12,38 +12,46 @@
 </head>
 <body>
 
-<!-- Код для примера -->
+<!-- шапка сайта -->
 <header class="header">
 
-    <div class="topLine">
-        <img alt="" class="topLine__shopLogo" src="img/the_shop_logo.svg">
-        <svg class="topLine__OggettoLogo">
-            <use xlink:href="img/oggetto_logo.svg#ogg-logo"></use>
-        </svg>
-        <div class="topLine__number">
-            +7 (812) 2&#8226;12&#8226;85&#8226;06
+    <div class="header-top">
+        <div class="header-top__shop-logo">
+            <img alt="" class="shop-logo" src="img/the_shop_logo.svg">
+        </div>
+        <div class="header-top__ogg-logo">
+            <svg class="oggetto-logo">
+                <use xlink:href="img/oggetto_logo.svg#ogg-logo"></use>
+            </svg>
+        </div>
+        <div class="header-top__number">
+            <div class="telephone-number">
+                +7 (812) 2&#8226;12&#8226;85&#8226;06
+            </div>
         </div>
     </div>
 
-    <nav class="menu">
-
-        <input type="checkbox" class="menu__open-checkbox" id="menu__open-checkbox">
-        <label for="menu__open-checkbox">
-            <span class="menu__button mobile-only"></span>
-        </label>
-
-        <div class="menu__all-items">
-            <a href="#" class="menu__item menu__item_current">LISP</a>
-            <a href="#" class="menu__item">OCaml</a>
-            <a href="#" class="menu__item">JavaScript</a>
-            <a href="#" class="menu__item">Python</a>
-            <a href="#" class="menu__item">PHP</a>
+    <div class="header-bottom">
+        <nav class="menu">
+            <input type="checkbox" class="menu__open-checkbox" id="menu__open-checkbox">
+            <label for="menu__open-checkbox">
+                <span class="menu__open-button mobile-only"></span>
+            </label>
+            <ul class="menu__all-items">
+                <li class="menu__item"><a href="#" class="menu__link _current">LISP</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">OCaml</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">JavaScript</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Python</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">PHP</a></li>
+            </ul>
+        </nav>
+        <div class="header-bottom__search">
+            <form class="search" action="">
+                <input type="search" class="search__textfield">
+                <input type="image" alt="" src="img/icons/search-image.svg" class="search__icon">
+            </form>
         </div>
-        <form action="">
-            <input type="search" class="menu__search">
-            <input type="image" alt="" src="img/icons/search-image.svg" class="menu__search-icon">
-        </form>
-    </nav>
+    </div>
 </header>
 <article>
     <ul class="breadcrumbs">
@@ -51,7 +59,7 @@
         <li class="breadcrumbs__separator">/</li>
         <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Одежда</a></li>
         <li class="breadcrumbs__separator">/</li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link_current">Футболки</a></li>
+        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link breadcrumbs__link_current">Футболки</a></li>
     </ul>
 
     <div class="item">
