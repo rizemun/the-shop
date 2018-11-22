@@ -212,7 +212,34 @@
         &:hover {
             opacity: .9;
         }
+
+        &::after{
+            content: '♥';
+            position: fixed;
+            display: block;
+            right: 40px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid purple;
+            background: red;
+            z-index: 3;
+        }
+
+
+
+    }
+
+    &__icon::before{
+        content: '♥';
+        position: fixed;
+        display: block;
+        right: 60px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid purple;
+        background: red;
+        z-index: 3;
     }
 }
-
-
